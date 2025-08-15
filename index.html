@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TOP-C | The Other Playing Cards</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="TOP-C Home">
+        <img src="assets/logo.png" alt="TOP-C Logo" class="brand-logo" />
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="cta" onclick="document.querySelector('#shop').scrollIntoView({behavior:'smooth'})">
+        Buy Cards Now
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <section class="hero-copy">
+        <p class="kicker">Welcome to <span class="brand-accent">TOP-C</span> Playing Cards</p>
+        <h1>The Other Playing Cards — Where Tradition Meets Purpose</h1>
+        <p>Our card games are designed to help you find fun while learning the <strong>Word of God</strong>. These card games offer strategy and a fresh challenge to help you be <strong>“In The Know.”</strong></p>
+        <p>Every game in this system promotes wholesome, family-centered fun and engagement. The main decks include the <strong>New Testament Deck</strong>, the <strong>Old Testament Deck</strong>, and the <strong>Junior Version</strong> — all rooted in the content of the Bible.</p>
+        <ul class="bullets">
+          <li>We utilize the Whole Bible for all adult games: New Testament, Old Testament, and Junior Version.</li>
+          <li>Decks inspired by the books of the Bible.</li>
+          <li>Over 16 original games — including <em>Bible Bid</em>, <em>Spread Love</em>, <em>Fly Over</em>, and <em>Declaration</em>.</li>
+          <li>Play solo, 1-on-1, or in strategic team formats.</li>
+          <li>Based on CHS — Chronological Hierarchy Structure.</li>
+        </ul>
+        <div class="hero-ctas">
+          <a class="cta primary" href="#shop">Shop the Decks</a>
+          <a class="cta secondary" href="#about">Learn More</a>
+        </div>
+      </section>
+      <aside class="hero-art" aria-hidden="true">
+        <div class="card-stack">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <section id="shop" class="shop section">
+    <div class="container">
+      <h2>Shop</h2>
+      <p class="subhead">Explore decks and game packs aligned to the content above.</p>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-media"></div>
+          <h3>New Testament Deck</h3>
+          <p>Wholesome, strategy-driven play anchored in the New Testament.</p>
+          <button class="btn">Add to Cart</button>
+        </article>
+        <article class="product-card">
+          <div class="product-media"></div>
+          <h3>Old Testament Deck</h3>
+          <p>Classic narratives and wisdom literature reimagined for card play.</p>
+          <button class="btn">Add to Cart</button>
+        </article>
+        <article class="product-card">
+          <div class="product-media"></div>
+          <h3>Junior Version</h3>
+          <p>Kid-friendly learning and family fun—accessible and engaging.</p>
+          <button class="btn">Add to Cart</button>
+        </article>
+        <article class="product-card">
+          <div class="product-media"></div>
+          <h3>Bible Bid Game Pack</h3>
+          <p>One of 16 original games referenced—optimized for quick play.</p>
+          <button class="btn">Add to Cart</button>
+        </article>
+        <article class="product-card">
+          <div class="product-media"></div>
+          <h3>Spread Love Game Pack</h3>
+          <p>A fan-favorite ruleset promoting teamwork and connection.</p>
+          <button class="btn">Add to Cart</button>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="about section">
+    <div class="container about-grid">
+      <div>
+        <h2>About TOP-C</h2>
+        <p>TOP-C — The Other Playing Cards — exists to deliver fun, strategy, and Scripture-rooted learning in an accessible card-game format. From the New and Old Testament decks to the Junior Version, our portfolio is purpose-built for families, youth groups, and game nights.</p>
+        <p>Our design ethos is simple: clear rules, high replay value, and content fidelity. With 16+ original games and CHS-aligned structure, we empower players to be <strong>“In The Know.”</strong></p>
+      </div>
+      <div class="about-callout">
+        <h3>What’s Inside</h3>
+        <ul>
+          <li>Decks inspired by the books of the Bible</li>
+          <li>Solo, versus, and team formats</li>
+          <li>Clear rules & quick start guides</li>
+          <li>Family-centered, screen-free engagement</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="foot-brand">
+        <img src="assets/logo.png" alt="TOP-C Logo" class="brand-logo small" />
+        <p>© <span id="year"></span> TOP-C — The Other Playing Cards. All rights reserved.</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="foot-meta">
+        <p>Built for GitHub Pages. One-page anchor navigation.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('open');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
